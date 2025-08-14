@@ -21,3 +21,21 @@ cd myprog-django
 # Installing dependencies
 pip install -r requirements.txt
 ```
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="1.jpg" width="85%">
+      </td>
+      <td align="center">
+        <img src="1.jpg" width="85%">
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="3.jpg" width="85%">
+      </td>
+    </tr>
+  </table>
+</div>
+
