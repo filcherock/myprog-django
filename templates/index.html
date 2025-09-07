@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>myprog</title>
+        <link rel="icon" href="{% static 'media/favicon.ico' %}" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <a href="/" style="text-decoration: none; color: #fff;">myprog</a>
+        </header>
+        <main>
+            <form class="searchBox" method="get" action="{% url 'search' %}">
+                <input type="text" name="q" value="{{ query }}" placeholder="...">
+                <button type="submit">🔍</button>
+            </form>
+            <br><Br><br><br>
+            <div>
+                <section class="appsList">
+                    <div class="apps">
+                        {% for x in apps %}
+                            <a href="/apps/{{x.id}}" class="appLink">
+                            <div class="appBanner">
+                                <div class="colorBanner" style="background-color: {{ x.bg }};">
+                                    <img src="/media/{{x.icon}}">
+                                </div>
+                                <div class="infoBanner">
+                                    <h2>{{x.title}}</h2>
+                                    <p>Version: {{x.version}}</p>
+                                    <div class="platform" align="right">
+                                        {% if x.winplatform == True %}
+                                        <img src="{% static 'media/win.svg' %}" width="25px" height="25px">
+                                        {% endif %}
+                                        {% if x.linuxplatform == True %}
+                                        <img src="{% static 'media/linux.png' %}" width="25px" height="25px">
+                                        {% endif %}
+                                    </div> 
+                                </div>
+                            </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>
+
+<!--<div class="apps">
+                {% for x in apps %}
+                <div class="appBanner">
+                    <div class="colorBanner">
+                        <img src="/media/{{x.icon}}">
+                    </div>
+                    <div class="infoBanner">
+                        <h2>{{x.title}}</h2>
+                        <p>Version: {{x.version}}</p>
+                    </div>
+                </div>
+                <br>
+                {% endfor %}
+            </div>-->

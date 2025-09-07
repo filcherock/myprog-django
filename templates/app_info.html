@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'media/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleApp.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script src="{% static 'slick/slickk/slick.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slickk/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slickk/slick-theme.css' %}"/>
+
+    {% for x in app_case %}
+    <title>{{ x.title }} | myprog</title>
+    {% endfor %}
+</head>
+<body>
+    <header>
+        <a href="/" style="text-decoration: none; color: #fff;">myprog</a>
+    </header>
+    <main>
+        {% for x in app_case %}
+        <div class="colorBannerBig" style="background-color: {{ x.bg }};">
+            <img src="/media/{{x.icon}}"> 
+        </div>
+        <div class="titleBanner">
+            <h1 class="title">{{x.title}}</h1>
+            <h3 class="downtitle">version: {{x.version}}   ·   {% if x.winplatform == True %}<img src="{% static 'media/win.svg' %}" width="25px" height="25px">{% endif %} {% if x.linuxplatform == True %}<img src="{% static 'media/linux.png' %}" width="25px" height="25px">{% endif %}</h3>
+        </div><br>
+        <div class="description">
+            <p>{{x.descriptions}}</p>
+        </div><br>
+        <div class="downloadButton">
+            {% if x.winplatform == True %}
+            <button class="winbtn" type="button">
+                <img src="{% static 'media/win.svg' %}" width="30px" height="30px">
+                 DOWNLOAD
+            </button>
+            {% endif %}
+            {% if x.linuxplatform == True %}
+            <button class="linuxbtn" type="button">
+                <img src="{% static 'media/linux.png' %}" width="30px" height="30px">
+                 DOWNLOAD
+            </button>
+            {% endif %}
+        </div>
+        <br><br><hr><br><br>
+        {% if x.opensource == True %}
+        <div class="opensourceBanner" style="width: 500px; text-align: justify; margin-left: 16%;">
+            <h2 style="display: flex; justify-content: left;">Open-Source Project</h2>
+            <h3 style="display: flex; justify-content: left;">💚 Verified by myprog moderation</h3>
+            <div class="githubBanner" style="display: flex; justify-content: left; margin-top: 20px; margin-bottom: 20px;">
+                <button class="githubbtn" type="button">
+                    <img src="{% static 'media/github.svg' %}" width="30px" height="30px">
+                  Source Code
+                </button>
+            </div>
+        </div>
+        {% endif %}
+        <div class="screenshots">
+            {% for x in app_case %}
+            <div><img src="/media/{{ x.screen1 }}"></div>
+            <div><img src="/media/{{ x.screen2 }}"></div>
+            <div><img src="/media/{{ x.screen3 }}"></div>
+            {% endfor %}
+        </div>
+        <br><br><hr><br><br>
+        <div class="infoprog" style="width: 1200px; text-align: justify; margin-left: 16%;">
+            <div style="display: flex; justify-content: left; margin-bottom: 0.1%;"><h1 style="color: #fff; font-family: 'UbuntuBold';">Author: {{x.author}} {% if x.verAuthor == True %}<img src="{% static 'media/myprogver.png' %}" width="30px">{% endif %}</h1></div>
+            <div style="display: flex; justify-content: left;"><h2 style="color: #fff; font-family: 'UbuntuRegular';">Application Reliases: {{x.reliases}}</h2></div>
+        </div>
+    </main>
+    <script type="text/javascript" src="{% static 'js/slick_slider.js'%}"></script>
+    {% endfor %}
+</body>
+</html>
