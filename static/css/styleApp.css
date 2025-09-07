@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "VAGWorld"; 
+  src: url("/static/fonts/ofont.ru_VAG\ World.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
+
+@font-face {
+  font-family: "UbuntuRegular"; 
+  src: url("/static/fonts/Ubuntu-Regular.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
+
+@font-face {
+  font-family: "UbuntuBold"; 
+  src: url("/static/fonts/Ubuntu-Bold.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
+
+body {
+    background-color: #202020;
+}
+
+header {
+    background-color: black;
+    height: 10vh;
+    font-family: 'VAGWorld';
+    color: white;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-size: 36px;
+}
+
+.colorBannerBig {
+    width: 100%;
+    height: 250px; /* Высота остается фиксированной */
+    display: flex;
+    justify-content: center; 
+}
+
+.colorBannerBig img {
+    width: 250px;
+    height: 250px;
+    margin-top: 8.5%;
+}
+
+.titleBanner {
+    margin-top: 8%;
+    
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-family: 'UbuntuBold';
+    font-size: 80px;
+}
+
+.downtitle {
+    color: #909090;
+    font-family: 'UbuntuBold';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.downtitle img {
+    opacity: 0.5;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+}
+
+.description p {
+    width: 1000px;
+    color: #fff;
+    font-family: 'UbuntuRegular';
+    font-size: 25px;
+    text-align: justify;
+}
+
+.downloadButton {
+    display: flex;
+    justify-content: center;
+}
+
+.winbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    background-color: #2B6DAA;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'UbuntuRegular';
+    font-size: 25px;
+    margin-right: 50px;
+}
+
+.linuxbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    background-color: #A9694B;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'UbuntuRegular';
+    font-size: 25px;
+}
+
+.githubbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    background-color: #000000;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'UbuntuRegular';
+    font-size: 25px;
+    
+}
+
+.githubBanner button {
+    margin-right: 17%;
+}
+
+.opensourceBanner h2 {
+    color: #fff;
+}
+
+hr {
+    color: #fff;
+}
+
+.opensourceBanner {
+    color: #fff;
+    margin-left: 17%;
+}
+
+.opensourceBanner h2 {
+    font-family: 'UbuntuBold';
+    font-size: 36px;
+}
+
+.opensourceBanner h3 {
+    margin-top: 0.5%;
+    font-family: 'UbuntuRegular';
+}
+
+.githubBanner {
+    display: flex;
+    justify-content: right;
+}
+
+.screenshots img {
+    width: 1000px;
+    height: auto;
+}
+
+.infoprog {
+    display: block;
+}
+
+.infoprog h1, p {
+    width: 500px;
+    text-align: justify;
+}
+
+@media (max-width: 800px) {
+    .colorBannerBig img {
+        margin-top: 10%;
+    }
+
+    .description p {
+        width: 700px;
+    }
+}
+
+@media (max-width: 500px) {
+    .colorBannerBig img {
+        margin-top: 25%;
+    }
+
+    .titleBanner {
+        margin-top: 21%;
+    }
+
+    .description p {
+        width: 400px;
+    }
+}

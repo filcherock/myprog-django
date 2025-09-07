@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "VAGWorld"; 
+  src: url("/static/fonts/ofont.ru_VAG\ World.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
+
+@font-face {
+  font-family: "UbuntuRegular"; 
+  src: url("/static/fonts/Ubuntu-Regular.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
+
+@font-face {
+  font-family: "UbuntuBold"; 
+  src: url("/static/fonts/Ubuntu-Bold.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
+
+body {
+    background-color: #202020;
+}
+
+header {
+    background-color: black;
+    height: 10vh;
+    font-family: 'VAGWorld';
+    color: white;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-size: 36px;
+}
+
+.searchBox {
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+.searchBox input {
+    width: 750px;
+    height: 50px;
+    background-color: #303030;
+    color: #fff;
+    border: #C41B89 solid 1px;
+    border-radius: 40px;
+    margin-right: 1%;
+    outline: none;
+}
+
+.searchBox input:focus{
+    border: #6d1bc4 solid 1px;
+}
+
+
+.searchBox input[type="text"] {
+  padding-left: 20px; 
+  font-size: 18px;
+}
+
+.searchBox button {
+    margin-left: 1%;
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: #303030;
+    border: #C41B89 solid 1px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.searchBox button:hover {
+    background-color: #272727;
+}
+
+.searchBox button:active {
+    border: #6d1bc4 solid 1px;
+    background-color: #252525;
+}
+
+.apps {
+    display: grid; /* Используем grid для расположения элементов */
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки одинаковой ширины */
+    gap: 10px; /* Уменьшите отступы между элементами */
+    padding: 20px; /* Отступы внутри контейнера */
+    margin: 0 auto; /* Центрируем контейнер */
+    max-width: 1200px; /* Ограничиваем максимальную ширину контейнера */
+}
+
+.appBanner {
+    background-color: #101010;
+    border-radius: 30px;
+    height: 300px; /* Высота остается фиксированной */
+    width: 270px;
+}
+
+.colorBanner {
+    background-color: #7B4B70;
+    height: 200px; /* Высота остается фиксированной */
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.colorBanner img {
+    width: 150px;
+    height: 150px;
+}
+
+.infoBanner h2 {
+    padding: 10px;
+    font-family: 'UbuntuBold';
+    color: #fff;
+    text-decoration: none;
+}
+
+.infoBanner p {
+    font-family: 'UbuntuRegular';
+    color: #909090;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.appLink {
+    text-decoration: none;
+}
+
+.platform {
+    margin-right: 7.5%;
+    margin-bottom: 30%;
+    padding-bottom: 10px;
+}
+
+/* Адаптивность для меньших экранов */
+@media (max-width: 1200px) {
+    .apps {
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки для экранов меньше 1200px */
+    }
+}
+
+@media (max-width: 800px) {
+    .apps {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки для экранов меньше 800px */
+    }
+
+    .colorBannerBig img {
+        margin-top: 10%;
+    }
+
+    .description p {
+        width: 700px;
+    }
+}
+
+@media (max-width: 500px) {
+    .apps {
+        grid-template-columns: 1fr; /* 1 колонка для экранов меньше 500px */
+    }
+
+    .colorBannerBig img {
+        margin-top: 25%;
+    }
+
+    .titleBanner {
+        margin-top: 21%;
+    }
+
+    .description p {
+        width: 400px;
+    }
+}
